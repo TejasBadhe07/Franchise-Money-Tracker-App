@@ -1,0 +1,173 @@
+/* Font Family */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light Gray Background */
+}
+
+/* Header Styles */
+header {
+    background-color: #3498db; /* Primary Color: Blue */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #3498db; /* Match the header color */
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Dashboard Container Styles */
+.dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Quick Stats Styles */
+.quick-stats {
+    display: flex;
+    flex-wrap: wrap; /* Allow for multiple rows on smaller screens */
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.quick-stats div {
+    flex: 1; /* Equal width for quick-stats items */
+    text-align: center;
+    margin: 5px; /* Add spacing between items */
+}
+
+/* Recent Transactions Styles */
+.recent-transactions {
+    margin-bottom: 20px;
+}
+
+.recent-transactions .transaction-card {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.recent-transactions .transaction-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.recent-transactions .transaction-card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #3498db; /* Match the primary color */
+}
+
+/* File Upload, Approval Status, Notification Panel Styles */
+.file-upload-section,
+.approval-status,
+.notification-panel {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Hamburger Menu Toggle Styles */
+.menu-toggle {
+    display: none; /* Initially hide the hamburger menu on larger screens */
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff; /* Change hamburger color to white */
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Navigation Container Styles */
+.nav-container {
+    background-color: #38db81; /* Match the header color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-container a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Media Query for Responsive Design - Show hamburger menu on smaller screens */
+@media (max-width: 600px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .quick-stats {
+        flex-direction: column; /* Stack quick-stats items vertically */
+    }
+
+    .quick-stats div {
+        margin: 5px 0; /* Add spacing between quick-stats items */
+    }
+
+    .recent-transactions .transaction-card {
+        padding: 8px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
+    }
+
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #4926c9; /* Match the header color */
+        text-align: center;
+    }
+
+    .nav-container.show-menu {
+        display: flex;
+    }
+
+    .nav-container a {
+        margin: 10px 0;
+    }
+}
