@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Management Dashboard - Empire Hisaab</title>
+    <link rel="stylesheet" href="/static/css/style_dashboard.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add your custom styles here -->
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment Management Dashboard</h1>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="section-buttons">
+            <button onclick="redirectToDashboard()">Upload</button>
+            <button onclick="redirectToHistory()">History</button>
+            <button onclick="redirectToNotifications()">Notifications</button>
+            <button onclick="redirectToReports()">Reports</button>
+            <button onclick="redirectToDashboard()">Dashboard</button>
+        </div>
+    
+        <!-- Other sections with their respective content -->
+    
+    </div>
+
+    <div>
+        <h2>Reports</h2>
+    </div>
+    
+
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(function (el) {
+                el.classList.remove('active');
+            });
+    
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+    
+        function redirectToHistory() {
+            window.location.href = "/history";
+        }
+    
+        function redirectToNotifications() {
+            window.location.href = "/notifications";  // Adjust the route accordingly
+        }
+    
+        function redirectToReports() {
+            window.location.href = "/reports";  // Adjust the route accordingly
+        }
+    
+        function redirectToDashboard() {
+            window.location.href = "/dashboard";  // Adjust the route accordingly
+        }
+    </script>
+    
+</body>
+</html>

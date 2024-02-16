@@ -67,3 +67,14 @@ button {
 button:hover {
     background-color: #2980b9;
 }
+
+.history-entries {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.history-entries p {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

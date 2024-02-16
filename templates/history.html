@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Management Dashboard - Empire Hisaab</title>
+    <link rel="stylesheet" href="/static/css/style_dashboard.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Add your custom styles here -->
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment Management Dashboard</h1>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="section-buttons">
+            <button onclick="redirectToDashboard()">Upload</button>
+            <button onclick="redirectToHistory()">History</button>
+            <button onclick="redirectToNotifications()">Notifications</button>
+            <button onclick="redirectToReports()">Reports</button>
+            <button onclick="redirectToDashboard()">Dashboard</button>
+        </div>
+    
+        <!-- Other sections with their respective content -->
+    
+    </div>
+
+    <div class="section active">
+        <header>
+            <h2>Payment History</h2>
+        </header>
+    
+        <div class="history-container">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Franchise Name</th>
+                        <th>User Name</th>
+                        <th>UTR Number</th>
+                        <th>Payment Screenshot</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                        <tr>
+                            <td>{{ entry[1] }}</td>
+                            <td>{{ entry[2] }}</td>
+                            <td>{{ entry[3] }}</td>
+                            <td>{{ entry[4] }}</td>
+                            <td>
+                                <!-- Display the payment screenshot as an image -->
+                                <img src="data:image/png;base64,{{ entry[5] }}" alt="Payment Screenshot" style="max-width: 100px;">
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- Add any additional styling or content as needed -->
+    
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    
+
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(function (el) {
+                el.classList.remove('active');
+            });
+    
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+    
+        function redirectToHistory() {
+            window.location.href = "/history";
+        }
+    
+        function redirectToNotifications() {
+            window.location.href = "/notifications";  // Adjust the route accordingly
+        }
+    
+        function redirectToReports() {
+            window.location.href = "/reports";  // Adjust the route accordingly
+        }
+    
+        function redirectToDashboard() {
+            window.location.href = "/dashboard";  // Adjust the route accordingly
+        }
+    </script>
+    
+</body>
+</html>
