@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Empire Hisaab</title>
-    <link rel="stylesheet" href="/static/css/style_login.css">
-    <!-- Include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Add your custom styles here -->
-    <style>
-        
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Empire Hisaab</title>
+  <link rel="stylesheet" href="/static/css/style_login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
-    <div class="login-container">
-        <h2>Login</h2>
-        
-        <!-- Login Form -->
-        <form action="/" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+  <div class="login-container">
+    <header class="login-header">
+      <h1>Empire Hisaab</h1>
+      <h2>Login</h2>
+    </header>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+    <form action="/" method="post" class="login-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required placeholder="Enter Username">
+      </div>
 
-            <!-- Role Selection -->
-            <label for="role">Select your role:</label>
-            <select id="role" name="role">
-                <option value="1">Franchise Owner</option>
-                <option value="0">Franchise User</option>
-            </select>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Enter Password">
+      </div>
 
-            <!-- Trendy Login Button -->
-            <button type="submit">
-                <i class="fas fa-sign-in-alt"></i> Login Now!
-            </button>
-        </form>
-    </div>
+      <div class="form-group">
+        <label for="role">Select your role:</label>
+        <select id="role" name="role">
+          <option value="1">Franchise Owner</option>
+          <option value="0">Franchise User</option>
+        </select>
+      </div>
 
+      <button type="submit" class="login-button">Login Now! <i class="fas fa-sign-in-alt"></i></button>
+    </form>
+
+    <footer class="login-footer">
+      <p>Don't have an account? <a href="#">Sign Up</a></p>
+      <p><a href="#">Forgot Password?</a></p>
+    </footer>
+  </div>
+
+  <script src="/static/js/login.js"></script>
 </body>
 </html>

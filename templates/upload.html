@@ -1,91 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Management Dashboard - Empire Hisaab</title>
-    <link rel="stylesheet" href="/static/css/style_dashboard.css">
-    <!-- Include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Add your custom styles here -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Management Dashboard - Empire Hisaab</title>
+  <link rel="stylesheet" href="/static/css/style_dashboard_.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>Payment Management Dashboard</h1>
-    </header>
+  <header class="dashboard-header">
+    <h1>Payment Management Dashboard</h1>
+    <img src="/static/images/logo.png" alt="Empire Hisaab Logo">
+  </header>
 
-    <div class="dashboard-container">
-        <div class="section-buttons">
-            <button onclick="redirectToUpload()">Upload</button>
-            <button onclick="redirectToHistory()">History</button>
-            <button onclick="redirectToNotifications()">Notifications</button>
-            <button onclick="redirectToReports()">Reports</button>
-            <button onclick="redirectToDashboard()">Dashboard</button>
-        </div>
-    
-        <!-- Other sections with their respective content -->
-    
+  <nav class="dashboard-nav">
+    <button onclick="redirectToUpload()">Upload</button>
+    <button onclick="redirectToHistory()">History</button>
+    <button onclick="redirectToNotifications()">Notifications</button>
+    <button onclick="redirectToReports()">Reports</button>
+    <button onclick="redirectToDashboard()">Dashboard</button>
+  </nav>
+
+  <div class="dashboard-container">
+    <div class="section active">
+      <div class="upload-card">
+        <h2>Upload Daily Payment Details</h2>
+
+        <form action="/upload" method="post" class="payment-details" enctype="multipart/form-data">
+          <div class="form-row">
+            <label for="franchiseName">Franchise Name:</label>
+            <input type="text" id="franchiseName" name="franchiseName" required>
+          </div>
+
+          <div class="form-row">
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" name="userName" required>
+          </div>
+
+          <div class="form-row">
+            <label for="utrNumber">UTR Number:</label>
+            <input type="text" id="utrNumber" name="utrNumber" required>
+          </div>
+
+          <div class="form-row">
+            <label for="paymentDate">Payment Date:</label>
+            <input type="date" id="paymentDate" name="paymentDate" required>
+          </div>
+
+          <div class="form-row">
+            <label for="paymentScreenshot">Payment Screenshot:</label>
+            <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+          </div>
+
+          <button type="submit">
+            <i class="fas fa-upload"></i> Upload Payment
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
 
-        <div id="upload" class="section active">
-            <h2>Upload Daily Payment Details</h2>
-            
-            <!-- Payment Details Form -->
-            <form action="/upload" method="post" class="payment-details" enctype="multipart/form-data">
-                <label for="franchiseName">Franchise Name:</label>
-                <input type="text" id="franchiseName" name="franchiseName" required>
+  <script src="/static/js/dashboard.js"></script>
 
-                <label for="userName">Your Name:</label>
-                <input type="text" id="userName" name="userName" required>
 
-                <label for="utrNumber">UTR Number:</label>
-                <input type="text" id="utrNumber" name="utrNumber" required>
+  <script>
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(function (el) {
+            el.classList.remove('active');
+        });
 
-                <label for="paymentScreenshot">Payment Screenshot:</label>
-                <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+        // Show the selected section
+        document.getElementById(sectionId).classList.add('active');
+    }
 
-                <!-- Additional Fields as needed -->
+    function redirectToUpload() {
+        window.location.href = "/upload";
+    }
 
-                <!-- Upload Button -->
-                <button type="submit">
-                    <i class="fas fa-upload"></i> Upload Payment
-                </button>
-            </form>
+    function redirectToHistory() {
+        window.location.href = "/history";
+    }
 
-        </div>
+    function redirectToNotifications() {
+        window.location.href = "/notifications";  // Adjust the route accordingly
+    }
 
-        <script>
-            function showSection(sectionId) {
-                // Hide all sections
-                document.querySelectorAll('.section').forEach(function (el) {
-                    el.classList.remove('active');
-                });
-        
-                // Show the selected section
-                document.getElementById(sectionId).classList.add('active');
-            }
-        
-            function redirectToUpload() {
-                window.location.href = "/upload";
-            }
-    
-            function redirectToHistory() {
-                window.location.href = "/history";
-            }
-        
-            function redirectToNotifications() {
-                window.location.href = "/notifications";  // Adjust the route accordingly
-            }
-        
-            function redirectToReports() {
-                window.location.href = "/reports";  // Adjust the route accordingly
-            }
-        
-            function redirectToDashboard() {
-                window.location.href = "/dashboard";  // Adjust the route accordingly
-            }
-        </script>
+    function redirectToReports() {
+        window.location.href = "/reports";  // Adjust the route accordingly
+    }
+
+    function redirectToDashboard() {
+        window.location.href = "/dashboard";  // Adjust the route accordingly
+    }
+
+</script>
+
+
 
 </body>
 </html>
+
+        

@@ -1,0 +1,269 @@
+/* Base styles */
+body {
+font-family: 'Poppins', sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f9f9f9;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+/* Header */
+.dashboard-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+font-size: 1.8em;
+color: #3498db;
+}
+
+.dashboard-header img {
+width: 100px;
+}
+
+/* Navigation */
+.dashboard-nav {
+display: flex;
+justify-content: space-around;
+padding: 10px;
+background-color: #fff;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-nav button {
+background-color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 4px;
+transition: background-color 0.2s ease-in-out;
+}
+
+.dashboard-nav button:hover {
+background-color: #f2f2f2;
+}
+
+.dashboard-nav button.active {
+background-color: #3498db;
+color: #fff;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+flex: 1; /* Occupy remaining space */
+padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.dashboard-header {
+flex-direction: column;
+align-items: center;
+}
+.dashboard-header img {
+margin-bottom: 10px;
+}
+.dashboard-nav {
+flex-direction: column;
+}
+.dashboard-nav button {
+margin-bottom: 5px;
+}
+}
+
+
+/* Extend styles from dashboard.css */
+
+/* Report Section */
+.report-section {
+padding: 20px;
+border-radius: 4px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.report-section h2 {
+font-size: 1.6em;
+margin-bottom: 15px;
+}
+
+/* Tables */
+table {
+border-collapse: collapse;
+width: 100%;
+}
+
+th, td {
+padding: 8px;
+border: 1px solid #ddd;
+text-align: left;
+}
+
+th {
+background-color: #f2f2f2;
+}
+
+/* Charts (adapt this section to your specific charting library) */
+.chart-container {
+width: 100%;
+height: 300px;
+margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.report-section {
+margin-bottom: 10px;
+}
+}
+
+
+
+/* FOr Notifications
+
+/* Notification Section */
+.notification-section {
+padding: 20px;
+border-radius: 4px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.notification-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.notification-list li {
+display: flex;
+align-items: center;
+border-bottom: 1px solid #ddd;
+padding: 10px 15px;
+cursor: pointer; /* Make notifications clickable */
+transition: background-color 0.2s ease-in-out;
+}
+
+.notification-list li:hover {
+background-color: #f2f2f2;
+}
+
+.notification-list i {
+margin-right: 10px;
+font-size: 1.2em;
+}
+
+.notification-time {
+font-size: 0.8em;
+color: #999;
+margin-left: auto;
+}
+
+/* Notification Types (optional) */
+.notification-list li.success {
+color: #4caf50;
+}
+
+.notification-list li.warning {
+color: #ffc107;
+}
+
+.notification-list li.error {
+color: #f44336;
+}
+
+
+
+/* FOr History
+
+/* History Section */
+.history-section {
+padding: 20px;
+border-radius: 4px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.history-table {
+width: 100%;
+border-collapse: collapse;
+border: 1px solid #ddd;
+}
+
+.history-table th,
+.history-table td {
+padding: 8px;
+text-align: left;
+border: 1px solid #ddd;
+}
+
+.history-table th {
+background-color: #f2f2f2;
+font-weight: bold;
+}
+
+.history-table img {
+max-width: 100px;
+height: auto; /* Maintain aspect ratio */
+border-radius: 4px; /* Rounded corners */
+}
+
+.logout-button {
+display: block;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+background-color: #f05454; /* Adjust color */
+color: #fff;
+cursor: pointer;
+margin-top: 20px;
+text-decoration: none; /* Remove underline */
+}
+
+.logout-button:hover {
+background-color: #d93939; /* Darken on hover */
+}
+
+
+/* Upload
+
+/* Add your custom styles here */
+.upload-card {
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+padding: 20px;
+border-radius: 4px;
+margin-bottom: 20px;
+}
+
+.upload-card h2 {
+font-size: 1.6em;
+margin-bottom: 15px;
+}
+
+.form-row {
+display: flex;
+margin-bottom: 10px;
+align-items: center;
+}
+
+.form-label {
+width: 120px;
+text-align: right;
+}
+
+.form-input {
+flex: 1;
+padding: 8px;
+border: 1px solid #ddd;
+border-radius: 4px;
+margin-left: 10px;
+}
+
