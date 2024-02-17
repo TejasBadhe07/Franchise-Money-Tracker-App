@@ -19,7 +19,7 @@
 
     <div class="dashboard-container">
         <div class="section-buttons">
-            <button onclick="redirectToDashboard()">Upload</button>
+            <button onclick="redirectToUpload()">Upload</button>
             <button onclick="redirectToHistory()">History</button>
             <button onclick="redirectToNotifications()">Notifications</button>
             <button onclick="redirectToReports()">Reports</button>
@@ -35,7 +35,6 @@
     </div>
     
 
-
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -47,6 +46,10 @@
             document.getElementById(sectionId).classList.add('active');
         }
     
+        function redirectToUpload() {
+            window.location.href = "/upload";
+        }
+
         function redirectToHistory() {
             window.location.href = "/history";
         }

@@ -109,7 +109,7 @@ def dashboard():
 
         if role == 1:
             # Admin role
-            return render_template('admin_dashboard.html')
+            return render_template('dashboard.html')
         else:
             # User role
             return render_template('user_dashboard.html', entries=entries)
@@ -148,7 +148,7 @@ def upload():
             conn.commit()
             conn.close()
 
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('upload'))
 
     return render_template('upload.html')
 
