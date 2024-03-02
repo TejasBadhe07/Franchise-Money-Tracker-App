@@ -19,47 +19,138 @@
     <button onclick="redirectToDashboard()">Dashboard</button>
   </nav>
 
-    <div class="dashboard-container">
-        <section class="report-section">
-          <h2>Dashboard</h2>
-          </section>
-    </div>
+  <div class="dashboard-container">
+    <!-- Table for Account Name and Account Balance -->
+    <section class="report-section">
+      <h2>Dashboard</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Account Name</th>
+            <th>Account Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jhon Kotak</td>
+            <td>$1000.00</td>
+          </tr>
+          <tr>
+            <td>Bruno Indus</td>
+            <td>$2500.00</td>
+          </tr>
+          <tr>
+            <td>Kevin SBI</td>
+            <td>$500.00</td>
+          </tr>
+          <tr>
+            <td>Leo Maharashtra</td>
+            <td>$1200.00</td>
+          </tr>
+          <tr>
+            <td>Sergio PNB</td>
+            <td>$800.00</td>
+          </tr>
+          <tr>
+            <td>Andres Purple</td>
+            <td>$2000.00</td>
+          </tr>
+          <tr>
+            <td>Gerrad Boroda</td>
+            <td>$1500.00</td>
+          </tr>
 
-    <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+          <!-- Total Row -->
+          <tr class="total-row">
+            <td>Total</td>
+            <td id="total-amount">$748346</td>
+          </tr>
+
+          <!-- Spacer Row -->
+          <tr class="spacer-row">
+            <td colspan="2">&nbsp;</td>
+          </tr>
+
+          <!-- Old Balance Row -->
+          <tr>
+            <td>Old Balance</td>
+            <td>$500000.00</td>
+          </tr>
+
+          <!-- New Balance Row -->
+          <tr>
+            <td>New Balance</td>
+            <td>$748846.00</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Right side is blank for future implementations -->
+    <div class="right-side-content">
+      <!-- Entities and Points section -->
+      <div class="entities-points-section">
+        <h2>Entities and Points</h2>
+        <table class="entities-points-table">
+          <thead>
+            <tr>
+              <th>Entity</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entity 1</td>
+              <td>100</td>
+            </tr>
+            <tr>
+              <td>Entity 2</td>
+              <td>75</td>
+            </tr>
+            <tr>
+              <td>Entity 3</td>
+              <td>120</td>
+            </tr>
+            <tr>
+              <td>Entity 4</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td>Entity 5</td>
+              <td>90</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
 
   <script src="/static/js/dashboard.js"></script>
   <script>
     function showSection(sectionId) {
-        // Hide all sections
-        document.querySelectorAll('.section').forEach(function (el) {
-            el.classList.remove('active');
-        });
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(function (el) {
+        el.classList.remove('active');
+      });
 
-        // Show the selected section
-        document.getElementById(sectionId).classList.add('active');
+      // Show the selected section
+      document.getElementById(sectionId).classList.add('active');
     }
 
     function redirectToUpload() {
-        window.location.href = "/upload";
-    }
-
-    function redirectToHistory() {
-        window.location.href = "/history";
+      window.location.href = "/upload";
     }
 
     function redirectToNotifications() {
-        window.location.href = "/notifications";  // Adjust the route accordingly
-    }
-
-    function redirectToReports() {
-        window.location.href = "/reports";  // Adjust the route accordingly
+      window.location.href = "/notifications";  // Adjust the route accordingly
     }
 
     function redirectToDashboard() {
-        window.location.href = "/dashboard";  // Adjust the route accordingly
+      window.location.href = "/dashboard";  // Adjust the route accordingly
     }
-</script>
+  </script>
 </body>
 </html>
-
-    

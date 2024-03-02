@@ -226,6 +226,7 @@ color: #fff;
 cursor: pointer;
 margin-top: 20px;
 text-decoration: none; /* Remove underline */
+float: right;
 }
 
 .logout-button:hover {
@@ -266,4 +267,92 @@ border: 1px solid #ddd;
 border-radius: 4px;
 margin-left: 10px;
 }
+
+
+/* Additional styles for user_dashboard.html */
+
+/* Dashboard Table */
+.dashboard-container .report-section table {
+width: 50%; /* Adjust the width as needed */
+margin-top: 20px;
+}
+
+.dashboard-container .report-section th,
+.dashboard-container .report-section td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: left;
+}
+
+.dashboard-container .report-section th {
+background-color: #f2f2f2;
+}
+
+/* Add this style for the total row */
+.total-row {
+font-weight: bold;
+}
+
+
+/* Additional styles for user_dashboard.html */
+
+/* Dashboard Table */
+.dashboard-container .report-section table {
+    width: 50%; /* Adjust the width as needed */
+    margin-top: 20px;
+  }
+  
+  .dashboard-container .report-section th,
+  .dashboard-container .report-section td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .dashboard-container .report-section th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Add this style for the total row */
+  .dashboard-container .report-section .total-row {
+    font-weight: bold;
+  }
+  
+  /* Right-side content styles */
+  .right-side-content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .entities-points-section {
+    margin-top: 20px;
+  }
+  
+  .entities-points-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .entities-points-table th,
+  .entities-points-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .entities-points-table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Responsive Design for Entities and Points */
+  @media (max-width: 768px) {
+    .entities-points-section {
+      margin-top: 10px;
+    }
+  }
+  
+  
+  
 
