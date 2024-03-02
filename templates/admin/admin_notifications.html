@@ -14,18 +14,33 @@
   </header>
 
   <nav class="dashboard-nav">
+    <!--  
     <button onclick="redirectToUpload()">Upload</button>
+    -->
     <button onclick="redirectToHistory()">History</button>
-    <button onclick="redirectToNotifications()">Notifications</button>
+    <button class="active" onclick="redirectToNotifications()">Notifications</button>
     <button onclick="redirectToReports()">Reports</button>
-    <button class="active" onclick="redirectToDashboard()">Dashboard</button>
+    <button onclick="redirectToDashboard()">Dashboard</button>
   </nav>
 
-    <div class="dashboard-container">
-        <section class="report-section">
-          <h2>Dashboard</h2>
-          </section>
-    </div>
+  <div class="dashboard-container">
+    <section class="notification-section">
+      <h2>Notifications</h2>
+
+      <ul class="notification-list">
+        <li>
+          <i class="far fa-bell fa-1x"></i>
+          <span>New payment received for Invoice #12345.</span>
+          <span class="notification-time">5 minutes ago</span>
+        </li>
+        <li>
+          <i class="fas fa-exclamation-triangle fa-1x"></i>
+          <span>Potential error detected in transaction #XYZ.</span>
+          <span class="notification-time">1 hour ago</span>
+        </li>
+      </ul>
+    </section>
+  </div>
 
   <script src="/static/js/dashboard.js"></script>
   <script>
@@ -39,9 +54,9 @@
         document.getElementById(sectionId).classList.add('active');
     }
 
-    function redirectToUpload() {
-        window.location.href = "/upload";
-    }
+    //function redirectToUpload() {
+    //    window.location.href = "/upload";
+    //}
 
     function redirectToHistory() {
         window.location.href = "/history";
@@ -61,5 +76,7 @@
 </script>
 </body>
 </html>
+
+    
 
     

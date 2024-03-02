@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Management Dashboard - Empire Hisaab</title>
+  <link rel="stylesheet" href="/static/css/style_dashboard_.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header class="dashboard-header">
+    <h1>Payment Management Dashboard</h1>
+    <img src="/static/images/logo.png" alt="Empire Hisaab Logo">
+  </header>
+
+  <nav class="dashboard-nav">
+    <button onclick="redirectToUpload()">Upload</button>
+    <button onclick="redirectToNotifications()">Notifications</button>
+    <button onclick="redirectToDashboard()">Dashboard</button>
+  </nav>
+  <div class="dashboard-container">
+    <section class="notification-section">
+      <h2>Notifications</h2>
+
+      <ul class="notification-list">
+        <li>
+          <i class="far fa-bell fa-1x"></i>
+          <span>New payment received for Invoice #12345.</span>
+          <span class="notification-time">5 minutes ago</span>
+        </li>
+        <li>
+          <i class="fas fa-exclamation-triangle fa-1x"></i>
+          <span>Potential error detected in transaction #XYZ.</span>
+          <span class="notification-time">1 hour ago</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="/static/js/dashboard.js"></script>
+  <script>
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(function (el) {
+            el.classList.remove('active');
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    function redirectToUpload() {
+        window.location.href = "/upload";
+    }
+
+    function redirectToNotifications() {
+        window.location.href = "/notifications";  // Adjust the route accordingly
+    }
+
+
+    function redirectToDashboard() {
+        window.location.href = "/dashboard";  // Adjust the route accordingly
+    }
+</script>
+</body>
+</html>
+
+    
+
+    

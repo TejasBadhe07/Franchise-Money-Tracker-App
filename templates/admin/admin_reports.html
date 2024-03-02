@@ -14,7 +14,9 @@
   </header>
 
   <nav class="dashboard-nav">
+    <!--  
     <button onclick="redirectToUpload()">Upload</button>
+    -->
     <button onclick="redirectToHistory()">History</button>
     <button onclick="redirectToNotifications()">Notifications</button>
     <button class="active" onclick="redirectToReports()">Reports</button>
@@ -44,9 +46,9 @@
         document.getElementById(sectionId).classList.add('active');
     }
 
-    function redirectToUpload() {
-        window.location.href = "/upload";
-    }
+    //function redirectToUpload() {
+    //    window.location.href = "/upload";
+    //}
 
     function redirectToHistory() {
         window.location.href = "/history";

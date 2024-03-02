@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+
   <header class="dashboard-header">
     <h1>Payment Management Dashboard</h1>
     <img src="/static/images/logo.png" alt="Empire Hisaab Logo">
@@ -15,32 +16,52 @@
 
   <nav class="dashboard-nav">
     <button onclick="redirectToUpload()">Upload</button>
-    <button onclick="redirectToHistory()">History</button>
-    <button class="active" onclick="redirectToNotifications()">Notifications</button>
-    <button onclick="redirectToReports()">Reports</button>
+    <button onclick="redirectToNotifications()">Notifications</button>
     <button onclick="redirectToDashboard()">Dashboard</button>
   </nav>
 
   <div class="dashboard-container">
-    <section class="notification-section">
-      <h2>Notifications</h2>
+    <div class="section active">
+      <div class="upload-card">
+        <h2>Upload Daily Payment Details</h2>
 
-      <ul class="notification-list">
-        <li>
-          <i class="far fa-bell fa-1x"></i>
-          <span>New payment received for Invoice #12345.</span>
-          <span class="notification-time">5 minutes ago</span>
-        </li>
-        <li>
-          <i class="fas fa-exclamation-triangle fa-1x"></i>
-          <span>Potential error detected in transaction #XYZ.</span>
-          <span class="notification-time">1 hour ago</span>
-        </li>
-      </ul>
-    </section>
+        <form action="/upload" method="post" class="payment-details" enctype="multipart/form-data">
+          <div class="form-row">
+            <label for="franchiseName">Franchise Name:</label>
+            <input type="text" id="franchiseName" name="franchiseName" required>
+          </div>
+
+          <div class="form-row">
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" name="userName" required>
+          </div>
+
+          <div class="form-row">
+            <label for="utrNumber">UTR Number:</label>
+            <input type="text" id="utrNumber" name="utrNumber" required>
+          </div>
+
+          <div class="form-row">
+            <label for="paymentDate">Payment Date:</label>
+            <input type="date" id="paymentDate" name="paymentDate" required>
+          </div>
+
+          <div class="form-row">
+            <label for="paymentScreenshot">Payment Screenshot:</label>
+            <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+          </div>
+
+          <button type="submit">
+            <i class="fas fa-upload"></i> Upload Payment
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script src="/static/js/dashboard.js"></script>
+
+
   <script>
     function showSection(sectionId) {
         // Hide all sections
@@ -71,10 +92,12 @@
     function redirectToDashboard() {
         window.location.href = "/dashboard";  // Adjust the route accordingly
     }
+
 </script>
+
+
+
 </body>
 </html>
 
-    
-
-    
+        

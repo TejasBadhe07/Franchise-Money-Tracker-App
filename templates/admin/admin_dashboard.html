@@ -14,51 +14,22 @@
   </header>
 
   <nav class="dashboard-nav">
+    <!--  
     <button onclick="redirectToUpload()">Upload</button>
-    <button class="active" onclick="redirectToHistory()">History</button>
+    -->
+    <button onclick="redirectToHistory()">History</button>
     <button onclick="redirectToNotifications()">Notifications</button>
     <button onclick="redirectToReports()">Reports</button>
-    <button onclick="redirectToDashboard()">Dashboard</button>
+    <button class="active" onclick="redirectToDashboard()">Dashboard</button>
   </nav>
 
-  <div class="dashboard-container">
-    <section class="history-section">
-      <h2>Payment History</h2>
-
-      <table class="history-table">
-        <thead>
-          <tr>
-            <th>User ID</th>
-            <th>Franchise Name</th>
-            <th>User Name</th>
-            <th>UTR Number</th>
-            <th>Payment Date</th>
-            <th>Payment Screenshot</th>
-          </tr>
-        </thead>
-        <tbody>
-            {% for entry in entries %}
-                <tr>
-                    <td>{{ entry[1] }}</td>
-                    <td>{{ entry[2] }}</td>
-                    <td>{{ entry[3] }}</td>
-                    <td>{{ entry[4] }}</td>
-                    <td>
-                        <!-- Display the payment screenshot as an image -->
-                        <img src="data:image/png;base64,{{ entry[5] }}" alt="Payment Screenshot" style="max-width: 100px;">
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-      </table>
-
-      </section>
-  </div>
-
-  <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+    <div class="dashboard-container">
+        <section class="report-section">
+          <h2>Dashboard</h2>
+          </section>
+    </div>
 
   <script src="/static/js/dashboard.js"></script>
-
   <script>
     function showSection(sectionId) {
         // Hide all sections
@@ -70,9 +41,9 @@
         document.getElementById(sectionId).classList.add('active');
     }
 
-    function redirectToUpload() {
-        window.location.href = "/upload";
-    }
+    //function redirectToUpload() {
+    //    window.location.href = "/upload";
+    //}
 
     function redirectToHistory() {
         window.location.href = "/history";
@@ -93,4 +64,4 @@
 </body>
 </html>
 
-        
+    

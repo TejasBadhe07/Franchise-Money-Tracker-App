@@ -9,9 +9,13 @@
 </head>
 <body>
 
+
+  
   <div class="login-container">
     <header class="login-header">
-      <h1>Empire Hisaab</h1>
+      <div class="logo-container">
+        <img src="/static/images/logo.png" alt="Empire Hisaab Logo" class="logo">
+      </div>
       <h2>Login</h2>
     </header>
 
@@ -36,6 +40,15 @@
 
       <button type="submit" class="login-button">Login Now! <i class="fas fa-sign-in-alt"></i></button>
     </form>
+
+
+    <!-- Error Message -->
+    {% if error %}
+      <div class="error-message">
+        {{ error }}
+      </div>
+    {% endif %}
+
 
     <footer class="login-footer">
       <p>Don't have an account? <a href="#">Sign Up</a></p>

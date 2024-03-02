@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Management Dashboard - Empire Hisaab</title>
+  <link rel="stylesheet" href="/static/css/style_dashboard_.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    /* Table styling */
+    .history-table {
+      border: 1px solid #ddd;
+      border-collapse: collapse;
+      width: 100%; /* Ensure table takes full width */
+    }
+
+    .history-table th, .history-table td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    /* Payment status toggle styling */
+    .payment-status {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .payment-status label {
+      cursor: pointer;
+    }
+
+    .payment-status input[type="radio"] {
+      display: none; /* Hide the radio buttons */
+    }
+
+    .payment-status label span {
+      display: inline-block;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: all 0.2s ease-in-out;
+      font-weight: bold; /* Optional for a bolder look */
+    }
+
+    .payment-status input[type="radio"]:checked + label span {
+      background-color: #28a745; /* Green for "Received" */
+      color: #fff;
+    }
+
+    .payment-status input[type="radio"]:not(:checked) + label span {
+      background-color: #fff; /* White for "Not Received" */
+      color: #000;
+    }
+
+    /* Optional: Add hover effects for visual feedback */
+    .payment-status label span:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header class="dashboard-header">
+    <h1>Payment Management Dashboard</h1>
+    <img src="/static/images/logo.png" alt="Empire Hisaab Logo">
+  </header>
+
+  <nav class="dashboard-nav">
+    <!--  
+    <button onclick="redirectToUpload()">Upload</button>
+    -->
+    <button class="active" onclick="redirectToHistory()">History</button>
+    <button onclick="redirectToNotifications()">Notifications</button>
+    <button onclick="redirectToReports()">Reports</button>
+    <button onclick="redirectToDashboard()">Dashboard</button>
+  </nav>
+
+  <div class="dashboard-container">
+    <section class="history-section">
+      <h2>Payment History</h2>
+
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Franchise Name</th>
+            <th>User Name</th>
+            <th>UTR Number</th>
+            <th>Payment Screenshot</th>
+            <th>Payment Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry[1] }}</td>
+                    <td>{{ entry[2] }}</td>
+                    <td>{{ entry[3] }}</td>
+                    <td>{{ entry[4] }}</td>
+                    <td>
+                        <!-- Display the payment screenshot as an image -->
+                        <img src="data:image/png;base64,{{ entry[5] }}" alt="Payment Screenshot" style="max-width: 100px;">
+                    </td>
+                    <td>
+                      <div class="payment-status">
+                        <label>
+                          <input type="radio" name="status-{{ entry[0] }}" value="received" {% if entry[6] == 'received' %}checked{% endif %}>
+                          <span>Received</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="status-{{ entry[0] }}" value="not_received" {% if entry[6] == 'not_received' %}checked{% endif %}>
+                          <span>Not Received</span>
+                        </label>
+                      </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+
+      </section>
+  </div>
+
+  <a href="{{ url_for('logout') }}" class="logout-button">Logout</a>
+
+  <script src="/static/js/dashboard.js"></script>
+
+  <script>
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(function (el) {
+            el.classList.remove('active');
+        });
+
+        // Show the selected section
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    //function redirectToUpload() {
+    //    window.location.href = "/upload";
+    //}
+
+    function redirectToHistory() {
+        window.location.href = "/history";
+    }
+
+    function redirectToNotifications() {
+        window.location.href = "/notifications";  // Adjust the route accordingly
+    }
+
+    function redirectToReports() {
+        window.location.href = "/reports";  // Adjust the route accordingly
+    }
+
+    function redirectToDashboard() {
+        window.location.href = "/dashboard";  // Adjust the route accordingly
+    }
+</script>
+</body>
+</html>
+
+        

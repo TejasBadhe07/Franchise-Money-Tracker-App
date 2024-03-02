@@ -117,6 +117,19 @@ transition: color 0.3s ease-in-out;
 color: #2980b9; /* Darker accent on hover */
 }
 
+
+.logo-container {
+text-align: center; /* Center align logo visually */
+margin-bottom: 1rem; /* Add some space below logo */
+}
+
+.logo {
+width: 250px; /* Adjust width as needed */
+height: auto; /* Maintain aspect ratio */
+/* Customize further with border-radius, box-shadow, etc. */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
 .login-container {
